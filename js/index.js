@@ -6,10 +6,10 @@ function notEmpty(element){
 
 regBtn.addEventListener("click", () => {
 
-    let inputs = [password.value, email.value,];
+    let inputs = [password.value, email.value];
 
     if (inputs.every(notEmpty)){
-        windows.location.href="frontpage";
+        windows.location.href="frontpage.html";
     } else {
         alert("Complete los campos");
     }

@@ -1,4 +1,3 @@
-document.getElementById('alert').style.display='none'
 
     function showCategoriesList(array){
         let container = document.getElementById("container")
@@ -9,7 +8,7 @@ document.getElementById('alert').style.display='none'
             <div class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + products.image + `" alt="product image" class="img-thumbnail">
+                        <img src="` + category.image + `" alt="product image" class="img-thumbnail">
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
@@ -17,7 +16,7 @@ document.getElementById('alert').style.display='none'
                             <h4>`+ category.name +`</h4> 
                             <p> `+ category.description +`</p> 
                             </div>
-                            <small class="text-muted">` + products.soldCount + ` artículos</small> 
+                            <small class="text-muted">` + category.soldCount + ` artículos</small> 
                         </div>
     
                     </div>
@@ -36,3 +35,7 @@ document.getElementById('alert').style.display='none'
     }
  
     traerDatos()
+
+
+
+

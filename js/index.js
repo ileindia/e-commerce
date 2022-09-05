@@ -1,17 +1,16 @@
 
 
-function notEmpty(element){
-    return element !== "";
-}
+regBtn.addEventListener("click", () => { 
 
-regBtn.addEventListener("click", () => {
 
-    let inputs = [password.value, email.value];
-
-    if (inputs.every(notEmpty)){
+    if (password.value !== "" && email.value !== "" ){
         window.location.href="frontpage.html";
+        localStorage.setItem("usuario", email.value);
     } else {
         alert("Complete los campos");
     }
 });
-
+    
+if (localStorage.getItem("usuario")){
+    window.location.href="frontpage.html";
+}

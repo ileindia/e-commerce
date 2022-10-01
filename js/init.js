@@ -40,7 +40,22 @@ let getJSONData = function(url){
     });
 }
 
+document.getElementById("user").innerHTML = localStorage.getItem("usuario");
 
+document.getElementById("close").addEventListener("click", () => { 
+
+  if (localStorage.getItem("usuario")){
+    localStorage.removeItem("usuario");
+  }
+  
+});
+
+
+if(localStorage.getItem("usuario")){
+
+}else{window.location="login.html"
+
+}
 
 
 

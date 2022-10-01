@@ -6,7 +6,6 @@ let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
 
-document.getElementById("user2").innerHTML = localStorage.getItem("usuario");
 
 function sortCategories(criteria, array){
     let result = [];

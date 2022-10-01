@@ -9,9 +9,11 @@ let prcMin = undefined;
 let prcMax = undefined;
 let filtroArray = [];
 
-document.getElementById("user3").innerHTML = localStorage.getItem("usuario");
 
-
+function prodId(id){
+    localStorage.setItem("pID", id)
+    window.location="product-info.html"
+}
 
     function showList(array){
         let tarjList = "";
@@ -19,7 +21,7 @@ document.getElementById("user3").innerHTML = localStorage.getItem("usuario");
         for(let i = 0; i < array.length; i++){ 
             let products = array[i];
             tarjList += `
-            <div class="list-group-item list-group-item-action">
+            <div class="list-group-item list-group-item-action" onclick ="prodId(${products.id})">
                 <div class="row">
                     <div class="col-3">
                         <img src="` + products.image + `" alt="product image" class="img-thumbnail">
@@ -27,7 +29,7 @@ document.getElementById("user3").innerHTML = localStorage.getItem("usuario");
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <div class="mb-1">
-                            <h4>`+ products.name + " - UYU " + products.cost +`</h4> 
+                            <h4>`+ products.name + " - " + products.currency + " " + products.cost +`</h4> 
                             <p> `+ products.description +`</p> 
                             </div>
                             <small class="text-muted">` + products.soldCount + ` artículos</small> 
@@ -104,7 +106,8 @@ document.addEventListener("DOMContentLoaded", async ()=> {
     
             prcMin = undefined;
             prcMax = undefined;
-    
+            
+            showList(productsArray)
         });
 
         document.getElementById("rangeFilterCount").addEventListener("click", function(){
@@ -112,19 +115,23 @@ document.addEventListener("DOMContentLoaded", async ()=> {
             prcMax = document.getElementById("rangeFilterCountMax").value;
             filtroArray = productsArray;
 
-            if ((prcMin != undefined) && (prcMin != "") >= 0){
-                filtroArray = filtroArray.filter(product.cost >= prcMin);
+            if ((prcMin != undefined) && (prcMin != "") && (prcMin >= 0)){
+                filtroArray = filtroArray.filter(product=>product.cost >= prcMin);
             }else{
                 prcMin = undefined;
             }
             
-            if ((prcMax != undefined) && (prcMax != "") >= 0){
-                filtroArray = filtroArray.filter(product.cost <= prcMax);
+            if ((prcMax != undefined) && (prcMax != "") && (prcMax >= 0)){
+                filtroArray = filtroArray.filter(product=>product.cost <= prcMax);
             }else{
                 prcMax = undefined;
             }
             
+           showList(filtroArray)
+
         });
+
+
 })    
 
 

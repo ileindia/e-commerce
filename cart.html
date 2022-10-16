@@ -44,12 +44,42 @@
       </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="container text-center">
+        <h3>Carrito de compras</h3>
       </div>
-    </div>
-  </main>
+      <br>
+      <div class="container">
+        <h4>Articulos a comprar</h4>
+        <table class="table">
+          <thead class="container">
+            <tr>
+              <th scope="col">Articulo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Costo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="carro"></tbody>
+        </table>        
+      </div>
+      <hr>
+      <div class="container">
+          <form>
+            <h5>Tipo de envio</h5>
+            <br>
+            <p><input type="radio" name="env" value="p" required> Premium 2 a 5 dias (15%)</p>
+            <p><input type="radio" name="env" value="e"> Express 5 a 8 dias (7%)</p>
+            <p><input type="radio" name="env" value="s"> Standard 12 a 15 dias (5%)</p>
+            <br>
+            <h5>Direccion de envio</h5>
+            <br>
+            <p>Calle: <input type="text" name="calle" required></p> <p>Numero: <input type="text" name="numero" required></p>
+            <p>Esquina: <input type="text" name="esquina" required></p>
+            <button class="btn btn-primary mt-2">Comprar</button>  
+          </form>  
+      </div>
+    </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

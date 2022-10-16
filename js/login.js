@@ -7,7 +7,9 @@ regBtn.addEventListener("click", () => {
         window.location.href="index.html";
         localStorage.setItem("usuario", email.value);
     } else {
-        alert("Complete los campos");
+        document.getElementById("emailAlert").innerHTML = `Ingresa un email válido.`;
+        document.getElementById("passwordAlert").innerHTML = `La contraseña debe tener entre 4 y 20 caracteres.`;
+      
     }
 });
     

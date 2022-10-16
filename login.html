@@ -31,14 +31,16 @@
             <div class="row g-3">
               <form action="" class="align-items-center">
                 <div class="col-4 mx-auto">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input title="Introduzca su email" type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                    <div id="emailAlert" class="form-text" style="color:red";></div>
                 </div>
   
                 <div class="col-4 mx-auto">
-                  <label for="password" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="password">
-                </div>
+                      <label for="inputPassword5" class="form-label">Contraseña</label>
+                      <input title="Introduzca su contraseña" type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" required>
+                    <div id="passwordAlert" class="form-text" style="color:red";></div>
+                 </div>
                 <br>
                 <div class="d-grid gap-2 col-4 mx-auto">
                   <button class="btn btn-primary" type="button" id="regBtn">Ingresar</button>
@@ -64,3 +66,4 @@
 </body>
 
 </html>
+

@@ -63,9 +63,29 @@ function totalCost(){
       document.getElementById("noSelec").innerHTML=`Transferencia bancaria`;
     }
     
+    selecPago.classList.remove("is-invalid")
+
   }
 
+  const btnGuardar = document.getElementById("fin");
+  const formulario = document.getElementById("envioForm");
   
+  formulario.addEventListener("submit",(evento)=>{
+      formulario.classList.add("was-validated");  
+      if ((tarjeta.checked) || (transfer.checked)){
+        selecPago.classList.remove("is-invalid")
+      }else{
+        selecPago.classList.add("is-invalid")
+      }
+      if (formulario.checkValidity()){
+        alert("Has comprado con exito")
+      }else{
+        evento.preventDefault()
+      }
+
+
+  })
+    
 
 
 
